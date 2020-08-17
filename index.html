@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess your Mind by ThoughtlyCodes</title>
+    <link href='https://fonts.googleapis.com/css?family=Metal Mania' rel='stylesheet'>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Google Font -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Custom styles for this template -->
+      <link href="css.css" rel="stylesheet">
+      
+    </head>
+<body  class="">
+  <div class="work" id="work">
+    <center>
+  <h1>Guess your Mind</h1>
+</center>
+  <center><b>Instrutions</b></center><br>
+  <b><ol id="e">
+    <li>Think of a single digit number.</li>
+    <li>Keep multiplying it with a single digit till you get a number of atleast 5 digits.</li>
+    <li>Add 5 to the number.You can use the below calculator if you want.</li>
+    <li>Multiply that number with 6.</li>
+    <li>Now divide it with 2 and then multiply it with 3. </li>
+    <li>Now the number is as random as possible.</li>
+    <li>So, think of a digit from this number and then type the rest down below.</li>
+    <li>Don't be silly thinking of 0 , its too easy.</li>
+    <li>Now press submit the Algorithm will correctly predit your number.</li>
+  </ol>
+    
+    <div class="text-center">
+      <form name="formFirst">
+       <input class="text-center" type="number" name="firstNumber" placeholder="Atleast 5 digits"  id="value" value="0"><br><br>
+      </form>
+    </div>   
+      <center>
+       <button class="btn-lg btn-primary btn-block" onclick="main()" id="button">Submit</button>
+    </center><br>
+    <div class="text-center"><button onclick="copy()">COPY</button></div>
+        <!-- For Calculator -->
+
+  <div id='calc-contain'>
+  
+    <form name="calculator" class="text-center" >
+      
+      <input type="text" class="calculator-text" id="calc"  style="pointer-events: none;" name="answer" maxlength="24" placeholder="0">
+      <br>
+      
+      <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
+      <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
+      <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
+      <input type="button" value=" + " onclick="calculator.answer.value += '+'" />
+      <br>
+      
+      <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
+      <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
+      <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
+      <input type="button" value=" - " onclick="calculator.answer.value += '-'" />
+      <br>
+    
+      <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
+      <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
+      <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
+      <input type="button" value=" x " onclick="calculator.answer.value += '*'" />
+      <br>
+  
+      <input type="button" value=" C " onclick="calculator.answer.value = ''" />
+      <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
+      <input type="button" value=" = " onclick="calculator.answer.value = eval(calculator.answer.value)" />
+      <input type="button" value=" / " onclick="calculator.answer.value += '/'" />
+      <br>     
+
+    </form>
+    
+    </div>
+  </div>
+  <p class="text-center">Developed by ThoughtlyCodes</p>
+  <div class="result" id="result">
+    <p>The number you have thought is : </p><br>
+    <p id="predic" ></p>
+    <p style="color: black; position: sticky;">Comment </p>
+    <div id="emoji" >
+      <div id="div1" class="fa"></div>
+    
+  <script>
+  function smile() {
+    var a;
+    a = document.getElementById("div1");
+    a.innerHTML = "&#xf118;";
+    setTimeout(function () {
+        a.innerHTML = "&#xf11a;";
+      }, 1000);
+    setTimeout(function () {
+        a.innerHTML = "&#xf119;";
+      }, 2000);
+    setTimeout(function () {
+        a.innerHTML = "&#xf11a;";
+      }, 3000);
+  }
+  smile();
+  setInterval(smile, 4000);
+  </script>
+
+    </div>
+    <br>
+<div class="result-page">
+
+  <form id="submit-form" name="form" action="/" method="POST">
+    <input id="nameTyping" type="text" style="text-align: center;" name="NAME" placeholder="Enter Name"><br><br>
+    <textarea name="COMMENT" style="text-align: center;" id="" cols="30" rows="3" placeholder="Did the algoritham predit your number correctly!!"></textarea><br>
+    <center>
+      <input type="text" name="ID" id="hideValue"><br>
+    </center>
+    
+  </form>
+  <button onclick="reloadAndSubmit()">Submit & Retry</button><br><br>
+</div>
+<center>
+<img src="1.gif" class="gif-Image"><br>
+</center>
+<p class="text-center">Developed by ThoughtlyCodes</p>
+</div>
+
+
+<script src="js.js"></script>
+</body>
+</html>
+
